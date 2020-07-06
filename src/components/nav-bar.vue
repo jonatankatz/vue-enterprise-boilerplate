@@ -17,6 +17,7 @@ export default {
           name: 'profile',
           title: () => 'Logged in as ' + this.currentUser.name,
         },
+        { name: 'playgroundView', title: 'Play Ground' },
         {
           name: 'logout',
           title: 'Log out',

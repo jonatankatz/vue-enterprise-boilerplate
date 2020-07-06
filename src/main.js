@@ -1,10 +1,16 @@
 import Vue from 'vue'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+
 import router from '@router'
 import store from '@state/store'
 import App from './app.vue'
 
 // Globally register all `_base`-prefixed components
 import '@components/_globals'
+
+Vue.use(VueMaterial)
 
 // Don't warn about using the dev version of Vue in development.
 Vue.config.productionTip = process.env.NODE_ENV === 'production'
@@ -14,7 +20,6 @@ if (process.env.VUE_APP_TEST === 'e2e') {
   // Ensure tests fail when Vue emits an error.
   Vue.config.errorHandler = window.Cypress.cy.onUncaughtException
 }
-
 const app = new Vue({
   router,
   store,

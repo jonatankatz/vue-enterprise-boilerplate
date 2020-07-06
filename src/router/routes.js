@@ -65,6 +65,14 @@ export default [
     props: (route) => ({ user: route.meta.tmp.user }),
   },
   {
+    path: '/playground',
+    name: 'playgroundView',
+    component: () => lazyLoadView(import('@views/playgroundView.vue')),
+    meta: {
+      authRequired: true,
+    },
+  },
+  {
     path: '/logout',
     name: 'logout',
     meta: {
